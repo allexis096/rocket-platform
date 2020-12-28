@@ -10,11 +10,13 @@ module.exports = {
       }
     },
     fontSize: {
-      'h1Login': '3.375rem'
+      'h1Login': '3.375rem',
+      'small': '0.875rem'
     },
     backgroundColor: {
       'primary': '#121214',
-      'secondary': '#202024'
+      'secondary': '#202024',
+      'rocket': '#8464e5'
     },
     textColor: {
       'primary': '#e1e1e6',
