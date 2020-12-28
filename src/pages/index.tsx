@@ -1,5 +1,9 @@
 import { useCallback } from 'react';
+import { FiMail } from 'react-icons/fi';
+import { FaLock } from 'react-icons/fa';
+
 import Logo from '../../public/logo.svg';
+import Input from '../components/Input';
 
 export default function Home() {
   const handleSubmit = useCallback(() => {
@@ -8,21 +12,21 @@ export default function Home() {
 
   return (
     <div className="box-border h-screen flex justify-center items-center font-sans bg-primary text-primary">
-      <section className="flex max-w-4xl h-4/6">
+      <div className="max-w-screen-lg h-4/6 grid grid-cols-2">
         <div className="max-w-lg self-center">
-          <Logo />
-          <h1 className="text-h1Login font-bold min-w-max">
+          <Logo className="mb-16" />
+          <h1 className="text-h1Login font-bold min-w-max leading-none">
             Faça seu login
             <br />
             na plataforma
           </h1>
         </div>
 
-        <div className="bg-secondary p-16 w-full">
+        <div className="bg-secondary p-16 max-w-md rounded-md">
           <form onSubmit={handleSubmit} className="flex flex-col">
-            <input className="bg-primary h-12" type="text" placeholder="E-mail" />
-            <input type="text" placeholder="Senha" />
-            <span>Esqueci minha senha</span>
+            <Input placeholder="E-mail" icon={FiMail} />
+            <Input placeholder="Senha" icon={FaLock} />
+            <a>Esqueci minha senha</a>
             <button>Entrar</button>
           </form>
 
@@ -31,11 +35,11 @@ export default function Home() {
           </p>
 
           <div>
-            <span>Ou entre com</span>
+            <span>Ou entre com </span>
             <button>GITHUB</button>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
