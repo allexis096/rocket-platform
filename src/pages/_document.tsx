@@ -6,6 +6,11 @@ export default class MyDocument extends Document {
       <Html lang="pt">
         <Head>
           <meta charSet="utf-8" />
+          <link
+            rel="shortcut icon"
+            href="https://app.rocketseat.com.br/favicon.png"
+            type="image/x-icon"
+          />
 
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
