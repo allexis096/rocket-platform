@@ -7,6 +7,10 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Roboto', ...defaultTheme.fontFamily.sans],
+      },
+      width: {
+        '480px': '30rem',
+        '352px': '22rem'
       }
     },
     fontSize: {
@@ -16,7 +20,8 @@ module.exports = {
     backgroundColor: {
       'primary': '#121214',
       'secondary': '#202024',
-      'rocket': '#8464e5'
+      'rocket': '#8464e5',
+      'github': '#29292e'
     },
     textColor: {
       'primary': '#e1e1e6',
