@@ -22,7 +22,7 @@ export default function Input({ placeholder, icon: Icon }: InputProps) {
       {placeholder === 'Senha' ? (
         <>
           <input
-            className="bg-primary h-12 pr-10 pl-11 w-352px rounded-md mb-4 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-75"
+            className="bg-primary h-12 pr-3 pl-11 md:w-352px rounded-md mb-4 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-75"
             type={showPassword === false ? 'password' : 'text'}
             placeholder={placeholder}
             onFocus={() => setFocus(!focus)}
@@ -48,7 +48,7 @@ export default function Input({ placeholder, icon: Icon }: InputProps) {
         </>
       ) : (
         <input
-          className="bg-primary h-12 pr-6 pl-11 w-352px rounded-md mb-4 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-75"
+          className="bg-primary h-12 pr-3 pl-11 md:w-352px rounded-md mb-4 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-75"
           type="text"
           placeholder={placeholder}
           onFocus={() => setFocus(!focus)}

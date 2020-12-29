@@ -14,18 +14,18 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="box-border h-screen flex justify-center items-center font-sans bg-primary text-primary antialiased">
-      <div className="max-w-screen-lg h-4/6 grid grid-cols-2">
-        <div className="max-w-lg self-center h-3/5 ml-3">
+    <div className="box-border md:h-screen flex justify-center items-center font-sans bg-primary text-primary antialiased">
+      <div className="max-w-screen-lg h-4/6 md:grid md:grid-cols-2 flex flex-col">
+        <div className="max-w-lg md:self-center h-3/5 md:ml-3 mt-10">
           <Logo className="mb-16" />
-          <h1 className="text-h1Login font-bold min-w-max leading-tight">
+          <h1 className="text-h1Login font-bold min-w-max leading-tight mb-5">
             Faça seu login
             <br />
             na plataforma
           </h1>
         </div>
 
-        <div className="bg-secondary p-16 rounded-md w-480px">
+        <div className="bg-secondary p-16 rounded-md md:w-480px w-96">
           <form onSubmit={handleSubmit} className="flex flex-col">
             <Input placeholder="E-mail" icon={FiMail} />
             <Input placeholder="Senha" icon={FaLock} />
@@ -33,7 +33,7 @@ export default function Home() {
               Esqueci minha senha
             </a>
             <Link href="/">
-              <a className="bg-rocket flex justify-center items-center opacity-80 hover:opacity-100 transition-opacity focus:outline-none uppercase font-bold h-12 pr-6 pl-11 w-352px rounded-md mb-4 cursor-pointer">
+              <a className="bg-rocket flex justify-center items-center opacity-80 hover:opacity-100 transition-opacity focus:outline-none uppercase font-bold h-12 pr-6 pl-11 md:w-352px rounded-md mb-4 cursor-pointer">
                 Entrar
               </a>
             </Link>
