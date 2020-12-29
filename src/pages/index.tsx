@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import Link from 'next/link';
 import { FiMail } from 'react-icons/fi';
 import { FaLock, FaGithub } from 'react-icons/fa';
 
@@ -31,9 +32,11 @@ export default function Home() {
             <a className="w-36 mb-4 text-rocket text-small font-bold cursor-pointer opacity-80 hover:opacity-100">
               Esqueci minha senha
             </a>
-            <button className="bg-rocket opacity-80 hover:opacity-100 transition-opacity focus:outline-none uppercase font-bold h-12 pr-6 pl-11 w-352px rounded-md mb-4">
-              Entrar
-            </button>
+            <Link href="/">
+              <a className="bg-rocket flex justify-center items-center opacity-80 hover:opacity-100 transition-opacity focus:outline-none uppercase font-bold h-12 pr-6 pl-11 w-352px rounded-md mb-4 cursor-pointer">
+                Entrar
+              </a>
+            </Link>
           </form>
 
           <p className="mb-4 text-small text-center">
@@ -50,18 +53,20 @@ export default function Home() {
 
           <div className="flex">
             <span className="text-small mr-6 self-center whitespace-nowrap">Ou entre com </span>
-            <button
-              onMouseEnter={() => setGithubHover(!githubHover)}
-              onMouseLeave={() => setGithubHover(!githubHover)}
-              className="w-full flex items-center justify-center bg-github font-bold h-12 rounded-md opacity-90 hover:opacity-100 hover:bg-rocket transition-opacity"
-            >
-              <FaGithub
-                fill={githubHover === true ? '#fff' : '#8464e5'}
-                className="mr-2.5"
-                size={20}
-              />
-              GITHUB
-            </button>
+            <Link href="/">
+              <a
+                onMouseEnter={() => setGithubHover(!githubHover)}
+                onMouseLeave={() => setGithubHover(!githubHover)}
+                className="w-full flex items-center justify-center bg-github font-bold h-12 rounded-md opacity-90 hover:opacity-100 hover:bg-rocket transition-opacity cursor-pointer"
+              >
+                <FaGithub
+                  fill={githubHover === true ? '#fff' : '#8464e5'}
+                  className="mr-2.5"
+                  size={20}
+                />
+                GITHUB
+              </a>
+            </Link>
           </div>
         </div>
       </div>
