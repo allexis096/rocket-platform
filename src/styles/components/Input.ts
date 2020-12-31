@@ -32,7 +32,7 @@ export const Container = styled.div`
     width: 100%;
 
     &:focus {
-      border: 2px solid #8464e5;
+      border: 2px solid #8257e6;
     }
   }
 `;
