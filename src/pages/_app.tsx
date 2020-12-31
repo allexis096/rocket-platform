@@ -1,13 +1,14 @@
 import Head from 'next/head';
-import 'tailwindcss/tailwind.css';
+import GlobalStyles from '../styles/GlobalStyles';
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Login | Rocketseat</title>
+        <title>testing</title>
       </Head>
       <Component {...pageProps} />
+      <GlobalStyles />
     </>
   );
 }

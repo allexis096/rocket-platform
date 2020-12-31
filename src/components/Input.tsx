@@ -1,60 +1,62 @@
 import { InputHTMLAttributes, useState } from 'react';
+
+import { Container } from '../styles/components/Input';
 import { IconType } from 'react-icons';
-import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
+import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
+  password?: boolean;
   icon: IconType;
 }
 
-export default function Input({ placeholder, icon: Icon }: InputProps) {
+export default function Input({ placeholder, icon: Icon, password }: InputProps) {
+  const [showPassword, setShowPassword] = useState(false);
   const [focus, setFocus] = useState(false);
-  const [showPassword, setshowPassword] = useState(false);
+
+  if (password) {
+    return (
+      <Container>
+        <Icon
+          size={15}
+          fill={`${focus === true ? '#8464e5' : '#202024'}`}
+          color="#121214"
+          style={{ margin: '2px 3px' }}
+        />
+        <input
+          style={{ paddingRight: '2.5em' }}
+          className="password"
+          type={showPassword === false ? 'password' : 'text'}
+          placeholder={placeholder}
+          onFocus={() => setFocus((prev) => !prev)}
+          onBlur={() => setFocus((prev) => !prev)}
+        />
+        {showPassword === false ? (
+          <IoMdEye
+            onClick={() => setShowPassword((prev) => !prev)}
+            className="eye-password"
+            size={18}
+          />
+        ) : (
+          <IoMdEyeOff
+            onClick={() => setShowPassword((prev) => !prev)}
+            className="eye-password"
+            size={18}
+          />
+        )}
+      </Container>
+    );
+  }
 
   return (
-    <div className="relative">
-      <Icon
-        className="absolute top-4 left-4"
-        color="#121214"
-        fill={`${focus === true ? '#8464e5' : '#29292e'}`}
-        size={14}
+    <Container>
+      <Icon size={20} fill={`${focus === true ? '#8464e5' : '#202024'}`} color="#121214" />
+      <input
+        type="text"
+        placeholder={placeholder}
+        onFocus={() => setFocus((prev) => !prev)}
+        onBlur={() => setFocus((prev) => !prev)}
       />
-      {placeholder === 'Senha' ? (
-        <>
-          <input
-            className="bg-primary h-12 pr-3 pl-11 md:w-352px rounded-md mb-4 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-75"
-            type={showPassword === false ? 'password' : 'text'}
-            placeholder={placeholder}
-            onFocus={() => setFocus(!focus)}
-            onBlur={() => setFocus(!focus)}
-          />
-          {showPassword === false ? (
-            <BsEyeFill
-              onClick={() => setshowPassword(!showPassword)}
-              className="absolute top-4 right-4 cursor-pointer"
-              color="#121214"
-              fill="#8464e5"
-              size={18}
-            />
-          ) : (
-            <BsEyeSlashFill
-              onClick={() => setshowPassword(!showPassword)}
-              className="absolute top-4 right-4 cursor-pointer"
-              color="#121214"
-              fill="#5e47a0"
-              size={18}
-            />
-          )}
-        </>
-      ) : (
-        <input
-          className="bg-primary h-12 pr-3 pl-11 md:w-352px rounded-md mb-4 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-75"
-          type="text"
-          placeholder={placeholder}
-          onFocus={() => setFocus(!focus)}
-          onBlur={() => setFocus(!focus)}
-        />
-      )}
-    </div>
+    </Container>
   );
 }
