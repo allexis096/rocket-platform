@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>testing</title>
+        <title>Login | Rocketseat</title>
       </Head>
       <Component {...pageProps} />
       <GlobalStyles />

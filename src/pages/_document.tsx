@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <link
             rel="shortcut icon"
-            // href="https://app.rocketseat.com.br/favicon.png"
+            href="https://app.rocketseat.com.br/favicon.png"
             type="image/x-icon"
           />
 
