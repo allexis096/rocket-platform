@@ -33,17 +33,17 @@ describe('Input component', () => {
     );
 
     const passwordInput = getByPlaceholderText('Senha');
-    const test = getByTestId('eye-password');
+    const eyePassword = getByTestId('eye-password');
 
-    fireEvent.click(test);
+    fireEvent.click(eyePassword);
 
     await waitFor(() => {
       expect(passwordInput).toHaveProperty('type', 'text');
     });
 
-    const test2 = getByTestId('eye-passwordText');
+    const eyeText = getByTestId('eye-passwordText');
 
-    fireEvent.click(test2);
+    fireEvent.click(eyeText);
 
     await waitFor(() => {
       expect(passwordInput).toHaveProperty('type', 'password');
