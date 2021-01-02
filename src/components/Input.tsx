@@ -33,12 +33,14 @@ export default function Input({ placeholder, icon: Icon, password }: InputProps)
         />
         {showPassword === false ? (
           <IoMdEye
+            data-testid="eye-password"
             onClick={() => setShowPassword((prev) => !prev)}
             className="eye-password"
             size={18}
           />
         ) : (
           <IoMdEyeOff
+            data-testid="eye-passwordText"
             onClick={() => setShowPassword((prev) => !prev)}
             className="eye-password"
             size={18}
