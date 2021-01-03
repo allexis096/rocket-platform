@@ -9,9 +9,10 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #121214;
-    color: #e1e1e6;
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.tertiary};
     -webkit-font-smoothing: antialiased;
+    transition: background 0.2s ease 0s, color 0.2s ease 0s;
   }
 
   body, input, button {

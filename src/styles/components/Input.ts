@@ -16,23 +16,24 @@ export const Container = styled.div`
   .eye-password {
     left: unset;
     right: 15px;
-    color: #8257e6;
+    color: ${props => props.theme.colors.primary};
+    transition: color 0.2s ease 0s;
     cursor: pointer;
   }
 
   input {
-    background-color: #121214;
+    background-color: ${props => props.theme.colors.background};
 
-    border: 2px solid #121214;
+    border: 2px solid ${props => props.theme.colors.background};
     font-size: 16px;
-    color: #fff;
+    color: ${props => props.theme.colors.tertiary};
     padding: 0 1em 0 2.65em;
     border-radius: 5px;
     height: 50px;
     width: 100%;
 
     &:focus {
-      border: 2px solid #8257e6;
+      border: 2px solid ${props => props.theme.colors.primary};
     }
   }
 `;
