@@ -3,6 +3,7 @@ import { InputHTMLAttributes, useState } from 'react';
 import { Container } from '../styles/components/Input';
 import { IconType } from 'react-icons';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
+import useDarkMode from 'use-dark-mode';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
@@ -11,6 +12,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export default function Input({ placeholder, icon: Icon, password }: InputProps) {
+  const darkMode = useDarkMode();
+
   const [showPassword, setShowPassword] = useState(false);
   const [focus, setFocus] = useState(false);
 
@@ -28,20 +31,20 @@ export default function Input({ placeholder, icon: Icon, password }: InputProps)
           className="password"
           type={showPassword === false ? 'password' : 'text'}
           placeholder={placeholder}
-          onFocus={() => setFocus((prev) => !prev)}
-          onBlur={() => setFocus((prev) => !prev)}
+          onFocus={() => setFocus(prev => !prev)}
+          onBlur={() => setFocus(prev => !prev)}
         />
         {showPassword === false ? (
           <IoMdEye
             data-testid="eye-password"
-            onClick={() => setShowPassword((prev) => !prev)}
+            onClick={() => setShowPassword(prev => !prev)}
             className="eye-password"
             size={18}
           />
         ) : (
           <IoMdEyeOff
             data-testid="eye-passwordText"
-            onClick={() => setShowPassword((prev) => !prev)}
+            onClick={() => setShowPassword(prev => !prev)}
             className="eye-password"
             size={18}
           />
@@ -52,12 +55,16 @@ export default function Input({ placeholder, icon: Icon, password }: InputProps)
 
   return (
     <Container>
-      <Icon size={20} fill={`${focus === true ? '#8464e5' : '#202024'}`} color="#121214" />
+      <Icon
+        size={20}
+        fill={`${focus === true ? '#8464e5' : '#202024'}`}
+        color={`${darkMode.value ? '#121214' : '#eee'}`}
+      />
       <input
         type="text"
         placeholder={placeholder}
-        onFocus={() => setFocus((prev) => !prev)}
-        onBlur={() => setFocus((prev) => !prev)}
+        onFocus={() => setFocus(prev => !prev)}
+        onBlur={() => setFocus(prev => !prev)}
       />
     </Container>
   );
