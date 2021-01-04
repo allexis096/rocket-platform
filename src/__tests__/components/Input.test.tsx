@@ -1,26 +1,25 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Input from '../../components/Input';
 import { IconBase } from 'react-icons';
+
+import Providers from '../../styles/themes/Providers';
+import Input from '../../components/Input';
 
 describe('Input component', () => {
   it('should be able to render Input Password with focus and blur', async () => {
     const setFocus = jest.fn();
 
-    const { getByPlaceholderText } = render(
-      <Input
-        placeholder="Senha"
-        password
-        icon={IconBase}
-        onFocus={setFocus()}
-        onBlur={setFocus()}
-      />
+    render(
+      <Providers>
+        <Input
+          placeholder="Senha"
+          password
+          icon={IconBase}
+          onFocus={setFocus()}
+          onBlur={setFocus()}
+        />
+      </Providers>
     );
-
-    const passwordInput = getByPlaceholderText('Senha');
-
-    passwordInput.focus();
-    passwordInput.blur();
 
     await waitFor(() => {
       expect(setFocus).toHaveBeenCalledTimes(2);
@@ -29,7 +28,9 @@ describe('Input component', () => {
 
   it('should be able to switch between password and text on Input Password', async () => {
     const { getByPlaceholderText, getByTestId } = render(
-      <Input placeholder="Senha" password icon={IconBase} />
+      <Providers>
+        <Input placeholder="Senha" password icon={IconBase} />
+      </Providers>
     );
 
     const passwordInput = getByPlaceholderText('Senha');
@@ -53,14 +54,11 @@ describe('Input component', () => {
   it('should be able to render a common Input with focus and blur', async () => {
     const setFocus = jest.fn();
 
-    const { getByPlaceholderText } = render(
-      <Input placeholder="E-mail" icon={IconBase} onFocus={setFocus()} onBlur={setFocus()} />
+    render(
+      <Providers>
+        <Input placeholder="E-mail" icon={IconBase} onFocus={setFocus()} onBlur={setFocus()} />
+      </Providers>
     );
-
-    const passwordInput = getByPlaceholderText('E-mail');
-
-    passwordInput.focus();
-    passwordInput.blur();
 
     await waitFor(() => {
       expect(setFocus).toHaveBeenCalledTimes(2);
