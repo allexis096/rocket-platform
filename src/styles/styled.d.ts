@@ -6,6 +6,7 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
       tertiary: string;
+      textCard: string;
 
       primaryHover: string;
       text: string;

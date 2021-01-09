@@ -6,6 +6,7 @@ const dark = {
 
     primaryHover: '#9f80e8',
     text: '#fff',
+    textCard: '#87868b',
     span: '#ccc',
     divider: '#28272f',
     button: '#29292e',
@@ -22,6 +23,7 @@ const light = {
 
     primaryHover: '#9f80e8',
     text: '#fff',
+    textCard: '#121214',
     span: '#121214',
     divider: '#28272f',
     button: '#86888a',
@@ -31,4 +33,5 @@ const light = {
 };
 
 export const darkTheme = { ...dark };
+
 export const lightTheme = { ...light };
