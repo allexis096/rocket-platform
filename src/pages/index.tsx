@@ -59,7 +59,9 @@ export default function Home() {
             <a>Esqueci minha senha</a>
           </Link>
 
-          <SignInButton>Entrar</SignInButton>
+          <Link href="/dashboard">
+            <SignInButton>Entrar</SignInButton>
+          </Link>
 
           <CreateAccount>
             Não tem uma conta?{' '}
