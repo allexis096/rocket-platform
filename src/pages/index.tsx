@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { FiMail } from 'react-icons/fi';
 import { FaLock, FaGithub } from 'react-icons/fa';
-import Switch from 'react-switch';
 
 import {
   Container,
@@ -16,34 +15,15 @@ import {
 import LogoDark from '../../public/logo-dark.svg';
 import LogoLight from '../../public/logo-light.svg';
 import Input from '../components/Input';
-import { useCallback, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import useDarkMode from 'use-dark-mode';
+import Switch from '../components/Switch';
 
 export default function Home() {
-  const { colors } = useContext(ThemeContext);
-  const darkMode = useDarkMode(false);
-
-  const toggleTheme = useCallback(() => {
-    darkMode.toggle();
-
-    darkMode.value ? darkMode.disable() : darkMode.enable();
-  }, [darkMode]);
+  const darkMode = useDarkMode();
 
   return (
     <Container>
-      <Switch
-        onChange={toggleTheme}
-        checked={darkMode.value}
-        checkedIcon={false}
-        uncheckedIcon={false}
-        height={10}
-        width={40}
-        handleDiameter={20}
-        className="switch"
-        onColor={colors.primary}
-        offColor={colors.button}
-      />
+      <Switch />
       <Header>
         {darkMode.value ? <LogoDark /> : <LogoLight />}
         <h1>
