@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  .switch {
+  .switch-button {
     position: absolute;
     left: 50%;
     top: 20px;
@@ -20,7 +20,7 @@ export const Container = styled.div`
       'switch switch'
       'header main';
 
-    .switch {
+    .switch-button {
       grid-area: switch;
       margin: 0 auto;
       left: 3%;
