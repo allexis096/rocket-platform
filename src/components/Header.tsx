@@ -2,11 +2,13 @@ import LogoDark from '../../public/logo-dark.svg';
 import { IoMdSearch, IoMdPersonAdd, IoMdNotifications } from 'react-icons/io';
 
 import { Container, NavGroup } from '../styles/components/Header';
+import Switch from './Switch';
 
 export default function Header() {
   return (
     <Container>
       <LogoDark />
+      <Switch />
       <NavGroup>
         <div className="buttons">
           <IoMdSearch size={23} />
