@@ -18,7 +18,7 @@ const dark = {
 const light = {
   colors: {
     primary: '#8257e6',
-    secondary: '#aaa',
+    secondary: '#A0A0B2',
     tertiary: '#121214',
 
     primaryHover: '#9f80e8',

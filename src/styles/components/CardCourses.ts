@@ -49,6 +49,23 @@ export const Container = styled.div<CardProps>`
         }
       }
     `};
+
+  @media (max-width: 940px) {
+    align-items: center;
+    max-width: 350px;
+
+    &:first-child {
+      margin-left: initial;
+    }
+
+    &:nth-child(2) {
+      margin: initial;
+    }
+
+    &:last-child {
+      margin-right: initial;
+    }
+  }
 `;
 
 export const Card = styled.section`
